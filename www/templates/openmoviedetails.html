@@ -1,0 +1,21 @@
+<ion-view view-title="My MovieFinder" align-title="left">
+	<ion-content>
+	<div class="card">
+		<div class="item item-thumbnail-left item-text-wrap">
+			<img src="{{details.Poster}}">
+			<strong>{{ details.Title }}</strong>, (Imdb Rating: {{details.imdbRating}})
+		</div>
+		<div class="item item-body item-text-wrap">
+		
+                    <p><strong>Release Date:</strong> {{ details.Released }}
+                    <br><strong>Genre:</strong> {{ details.Genre }}
+                    <br><strong>Director:</strong> {{ details.Director }} 
+                    <br><strong>Writers:</strong> {{ details.Writer }}
+                    <br><strong>Actors:</strong> {{ details.Actors }}</p>
+                    <p><strong>Plot:</strong> {{details.Plot}}</p>
+                    <p>Language: {{details.Language}} 
+                    <br>Country: {{details.Country}}</p>
+                </div>
+	</div>
+	</ion-content>
+</ion-view>

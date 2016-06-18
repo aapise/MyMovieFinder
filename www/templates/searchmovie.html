@@ -1,0 +1,32 @@
+<ion-view view-title="My MovieFinder" align-title="left">
+    <ion-content>
+        <div class="hero slide-up" style="background-image: url('img/landing1.jpg');">
+            <div class="content" style="width:80%; margin-left:40px">
+                <h3>Which movie do you have in mind?</h3>
+                <br>
+                <input placeholder="Type Movie Name Here" ng-model="moviefinder.movietitle" ng-model-options="{ debounce: 500 }" ng-change="change()" onclick="select()" class="form-control" type="text" autofocus />
+            </div>
+        </div>
+        <div>
+            <h4 class="content padding" ng-if="nosearch==true" style="font-family: 'Acme', sans-serif; text-align: center;">Let us help you look for your favorite movies!</h4>
+            <h4 class="content padding" ng-if="nosearch==false" style="font-family: 'Acme', sans-serif;">Results for "{{moviefinder.movietitle}}"</h4>
+
+            <div class="list card" ng-if="moviedetails.Response==='True'" ng-repeat="movie in moviedetails.Search | orderBy: 'Year' : true ">
+
+                <a class="item item-thumbnail-left item-text-wrap" ui-sref="app.openmovie({movieTitle:'{{movie.Title}}'})">
+                    <img src="{{movie.Poster}}">
+                    <h2>{{ movie.Title }}</h2>
+                    <p>Imdb ID: {{ movie.imdbID }}</p>
+                    <p>Year of Release: {{ movie.Year }}</p>
+                    <p>Type: {{ movie.Type }}</p>
+                </a>
+
+            </div>
+        </div>
+    </ion-content>
+    <div class="bar-stable" style="position:fixed; bottom:0px; margin-bottom:0px; width:100%" ng-if="nosearch==false">
+    <a ng-disabled="currentPage == 0" ng-click="prevPage()" style="width:40%" class="button button-assertive-900 pull-left">Prev</a>
+    <div style="position:absolute; margin-left: 175px; margin-top:15px; color:black;">{{currentPage+1}}/{{numberOfPages()}}</div>
+    <a ng-disabled="currentPage >= moviedetails.totalResults/pageSize - 1" ng-click="nextPage()" style="margin-right:0px; width:40%" class="button button-assertive-900 pull-right">Next</a>
+    </div>
+</ion-view>
