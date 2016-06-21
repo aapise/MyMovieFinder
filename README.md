@@ -1,8 +1,8 @@
-# MyMovieFinder
+# My MovieFinder
 
 An android mobile application that helps you search for movies and their details.
 
-![](https://github.com/aapise/MyMovieFinder/blob/master/moviefinder2.JPG)    ![](https://github.com/aapise/MyMovieFinder/blob/master/moviefinder3.JPG)
+![](https://github.com/aapise/MyMovieFinder/blob/master/moviefinder2.JPG)     ![](https://github.com/aapise/MyMovieFinder/blob/master/moviefinder3.JPG)
 
 ###Technologies used:
 1. Ionic Framework
